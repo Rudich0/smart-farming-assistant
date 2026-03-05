@@ -1,0 +1,41 @@
+{
+  "app": {
+    "title": "Smart Farming Assistant",
+    "subtitle": "Upload a crop photo to detect diseases instantly",
+    "poweredBy": "Powered by MobileNetV2",
+    "classes": "disease classes"
+  },
+  "upload": {
+    "uploadButton": "Upload Photo",
+    "cameraButton": "Use Camera",
+    "description": "Upload a photo or use your camera to detect plant diseases",
+    "uploadedImage": "Uploaded Image"
+  },
+  "analysis": {
+    "analyzing": "Analyzing crop...",
+    "confidence": "confidence",
+    "topPredictions": "Top 5 Predictions"
+  },
+  "disease": {
+    "learnMore": "Learn More",
+    "symptoms": "Symptoms & Signs",
+    "causes": "Causes & Spread",
+    "treatment": "Treatment Recommendations",
+    "organicTreatment": "Organic Treatment Options",
+    "prevention": "Prevention Methods",
+    "severity": "Severity",
+    "crop": "Crop",
+    "close": "Close"
+  },
+  "severity": {
+    "none": "None",
+    "low": "Low",
+    "moderate": "Moderate",
+    "high": "High",
+    "veryHigh": "Very High"
+  },
+  "language": {
+    "english": "English",
+    "nepali": "नेपाली"
+  }
+}

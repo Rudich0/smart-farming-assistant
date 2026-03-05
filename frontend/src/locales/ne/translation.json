@@ -1,0 +1,41 @@
+{
+  "app": {
+    "title": "स्मार्ट खेती सहायक",
+    "subtitle": "रोग पत्ता लगाउन बालीको फोटो अपलोड गर्नुहोस्",
+    "poweredBy": "MobileNetV2 द्वारा संचालित",
+    "classes": "रोग वर्गहरू"
+  },
+  "upload": {
+    "uploadButton": "फोटो अपलोड गर्नुहोस्",
+    "cameraButton": "क्यामेरा प्रयोग गर्नुहोस्",
+    "description": "बिरुवाको रोग पत्ता लगाउन फोटो अपलोड गर्नुहोस् वा क्यामेरा प्रयोग गर्नुहोस्",
+    "uploadedImage": "अपलोड गरिएको तस्बिर"
+  },
+  "analysis": {
+    "analyzing": "बाली विश्लेषण गर्दै...",
+    "confidence": "विश्वास",
+    "topPredictions": "शीर्ष ५ भविष्यवाणीहरू"
+  },
+  "disease": {
+    "learnMore": "थप जान्नुहोस्",
+    "symptoms": "लक्षणहरू र संकेतहरू",
+    "causes": "कारणहरू र फैलावट",
+    "treatment": "उपचार सिफारिसहरू",
+    "organicTreatment": "जैविक उपचार विकल्पहरू",
+    "prevention": "रोकथाम विधिहरू",
+    "severity": "गम्भीरता",
+    "crop": "बाली",
+    "close": "बन्द गर्नुहोस्"
+  },
+  "severity": {
+    "none": "कुनै पनि छैन",
+    "low": "कम",
+    "moderate": "मध्यम",
+    "high": "उच्च",
+    "veryHigh": "अति उच्च"
+  },
+  "language": {
+    "english": "English",
+    "nepali": "नेपाली"
+  }
+}

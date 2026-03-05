@@ -1,0 +1,29 @@
+# Models - TOO LARGE
+models/
+*.keras
+*.h5
+*.bin
+*.pb
+tfjs_model/
+frontend/public/models/
+
+# Datasets - TOO LARGE  
+week 1/
+week 2/
+processed/
+raw/
+*.zip
+
+# Python
+__pycache__/
+*.pyc
+venv/
+.ipynb_checkpoints/
+
+# Node
+node_modules/
+frontend/build/
+
+# Other
+.env
+.DS_Store
