@@ -17,10 +17,11 @@ interface Props {
   onClose: () => void;
 }
 
-const { t } = useTranslation();
 export const DiseaseInfoModal: React.FC<Props> = ({ diseaseInfo, onClose }) => {
+  const { t } = useTranslation();
   if (!diseaseInfo) return null;
 
+  
   const getSeverityColor = (severity: string) => {
     switch (severity.toLowerCase()) {
       case 'very high':
