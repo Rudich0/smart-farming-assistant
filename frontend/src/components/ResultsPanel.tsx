@@ -28,6 +28,13 @@ const ResultsPanel: React.FC<Props> = ({ results, isAnalyzing, onLearnMore }) =>
   const top = results[0];
   const isHealthy = top.className.toLowerCase().includes('healthy');
 
+  const getConfidenceColor = (confidence: number) => {
+  if (confidence >= 0.9) return 'text-green-600';
+  if (confidence >= 0.7) return 'text-blue-600';
+  if (confidence >= 0.5) return 'text-yellow-600';
+  return 'text-orange-600';
+  };
+
   return (
     <div className="mt-6 space-y-4">
       <div className={`p-5 rounded-2xl text-center shadow-sm
@@ -43,8 +50,8 @@ const ResultsPanel: React.FC<Props> = ({ results, isAnalyzing, onLearnMore }) =>
       </div>
 
       <div>
-        <p className="text-sm font-semibold text-gray-400 uppercase mb-3">
-          Top 5 Predictions
+        <p className={`mt-1 font-semibold ${getConfidenceColor(top.confidence)}`}>
+          {(top.confidence * 100).toFixed(1)}% confidence
         </p>
         {results.slice(0, 5).map((r, i) => (
           <div key={i} className="mb-3">
@@ -52,7 +59,7 @@ const ResultsPanel: React.FC<Props> = ({ results, isAnalyzing, onLearnMore }) =>
               <span className="text-gray-700">
                 {r.className}
               </span>
-              <span className="font-semibold text-gray-600">
+              <span className={`font-semibold ${getConfidenceColor(r.confidence)}`}>
                 {(r.confidence * 100).toFixed(1)}%
               </span>
             </div>
