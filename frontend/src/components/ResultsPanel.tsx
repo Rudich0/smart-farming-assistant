@@ -1,5 +1,4 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
 import { getTranslatedDiseaseName } from '../utils/diseaseTranslations';
 
 interface Result {
@@ -10,17 +9,16 @@ interface Result {
 interface Props {
   results: Result[];
   isAnalyzing: boolean;
-  onLearnMore?: (className: string) => void;  
+  onLearnMore?: (className: string) => void;
 }
 
 const ResultsPanel: React.FC<Props> = ({ results, isAnalyzing, onLearnMore }) => {
-  const { t, i18n } = useTranslation();  // MOVE THIS LINE HERE!
   
   if (isAnalyzing) {
     return (
       <div className="text-center py-10">
         <div className="text-5xl animate-spin mb-3">🔬</div>
-        <p className="text-green-700 font-semibold text-lg">{t('analysis.analyzing')}</p>
+        <p className="text-green-700 font-semibold text-lg">Analyzing crop...</p>
       </div>
     );
   }
@@ -37,22 +35,22 @@ const ResultsPanel: React.FC<Props> = ({ results, isAnalyzing, onLearnMore }) =>
                     : 'bg-red-100 border border-red-300'}`}>
         <p className="text-4xl mb-2">{isHealthy ? '✅' : '⚠️'}</p>
         <p className="text-2xl font-bold text-gray-800">
-          {getTranslatedDiseaseName(top.className, i18n.language)}
+          {top.className}
         </p>
         <p className="text-gray-500 mt-1">
-          {(top.confidence * 100).toFixed(1)}% {t('analysis.confidence')}
+          {(top.confidence * 100).toFixed(1)}% confidence
         </p>
       </div>
 
       <div>
         <p className="text-sm font-semibold text-gray-400 uppercase mb-3">
-          {t('analysis.topPredictions')}
+          Top 5 Predictions
         </p>
         {results.slice(0, 5).map((r, i) => (
           <div key={i} className="mb-3">
             <div className="flex justify-between text-sm mb-1">
               <span className="text-gray-700">
-                {getTranslatedDiseaseName(r.className, i18n.language)}
+                {r.className}
               </span>
               <span className="font-semibold text-gray-600">
                 {(r.confidence * 100).toFixed(1)}%
@@ -70,12 +68,26 @@ const ResultsPanel: React.FC<Props> = ({ results, isAnalyzing, onLearnMore }) =>
                 onClick={() => onLearnMore(r.className)}
                 className="mt-2 text-sm text-blue-600 hover:text-blue-800 font-medium"
               >
-                📖 {t('disease.learnMore')} →
+                📖 Learn More →
               </button>
             )}
           </div>
         ))}
       </div>
+
+      {/* Analyze Another Button */}
+      {results.length > 0 && (
+        <div className="mt-6 text-center border-t border-gray-200 pt-6">
+          <button
+            onClick={() => window.location.reload()}
+            className="px-6 py-3 bg-gradient-to-r from-gray-600 to-gray-700 text-white rounded-lg 
+                     hover:from-gray-700 hover:to-gray-800 transition-all transform hover:scale-105 
+                     font-semibold shadow-md hover:shadow-lg"
+          >
+            🔄 Analyze Another Image
+          </button>
+        </div>
+      )}
     </div>
   );
 };
