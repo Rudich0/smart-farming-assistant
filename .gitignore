@@ -26,4 +26,14 @@ frontend/build/
 
 # Other
 .env
-.DS_Store
+.DS_Storenode_modules/ 
+models/best_model.keras 
+models/disease_detection_model.keras 
+models/model.h5 
+models/model_for_web.h5 
+models/tfjs_model.zip 
+frontend/public/tfjs_model/ 
+__pycache__/ 
+*.pyc 
+.env 
+.env.local 

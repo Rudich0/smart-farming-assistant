@@ -11,6 +11,7 @@ import { AboutPage } from './pages/AboutPage';
 import { HowItWorksPage } from './pages/HowItWorksPage';
 import { DiseasesPage } from './pages/DiseasesPage';
 import { HelpPage } from './pages/HelpPage';
+import { TestPage } from './pages/TestPage';
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:5000';
 
@@ -267,6 +268,7 @@ function App() {
             <Route path="/how-it-works" element={<HowItWorksPage language={language} />} />
             <Route path="/diseases" element={<DiseasesPage language={language} />} />
             <Route path="/help" element={<HelpPage language={language} />} />
+            <Route path="/test" element={<TestPage />} />
           </Routes>
         </main>
 
